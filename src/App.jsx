@@ -57,6 +57,13 @@ const handleReset=()=>{
   setIsYear(true);
 }
 
+const calculate=()=>{
+
+    let interest = (Principle*Rate*Year)/100;
+    setInterest(interest);
+    
+}
+
   return (
     <>
     <div className='d-flex justify-content-center align-items-center' style={{width:'100%',height:'100vh'}}>
@@ -64,7 +71,7 @@ const handleReset=()=>{
         <h2 className=''>Simple Interest Application</h2>
         <p className='card-text'>Calculate your simple interest easily</p>
         <div className='mt-5 flex-column rounded-5 shadow bg-success d-flex justify-content-center align-items-center p-4'>
-          <h2>₹ 0</h2>
+          <h2>₹ {Interest}</h2>
           <h5>Total Simple Interest</h5>
         </div>
           <form action="" className='mt-5'>
@@ -88,7 +95,7 @@ const handleReset=()=>{
             }
             </div>
             <div className='d-flex justify-content-between mt-4'>
-            <Button variant="contained" className='' color='success' style={{width:'190px',height:'60px'} } disabled={isPrinciple && IsRate && IsYear ? false:true}>CALCULATE</Button>
+            <Button variant="contained" className='' color='success' style={{width:'190px',height:'60px'} } disabled={isPrinciple && IsRate && IsYear ? false:true} onClick={calculate}>CALCULATE</Button>
              <Button variant="outlined" className='' style={{width:'190px',height:'60px'}} onClick={handleReset}>RESET</Button>
             </div>
           </form>
