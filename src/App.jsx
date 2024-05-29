@@ -11,6 +11,51 @@ function App() {
   const [Year, setYear] = useState(0);
   const [Rate, setRate] = useState(0);
   const [Interest, setInterest] = useState(0);
+  const [isPrinciple, setIsPrinciple] = useState(true);
+  const [IsRate, setIsRate] = useState(true);
+  const [IsYear, setIsYear] = useState(true);
+
+  const validate= (e)=>{   /* Here we are assigning the usestate values comparing with the name given */
+    // console.log(e.target.value);
+    // console.log(e.target.name);
+    console.log(!!e.target.value.match(/^[0-9]*$/));
+    if(!!e.target.value.match(/^[0-9]*$/)){
+      if(e.target.name === "Principle"){
+        setPrinciple(e.target.value);
+        setIsPrinciple(true);
+        }
+       else if(e.target.name === "Rate"){
+        setRate(e.target.value);
+        setIsRate(true);
+        }
+      else{
+        setYear(e.target.value);
+        setIsYear(true);
+       }
+    }
+    else{
+      if(e.target.name === "Principle"){
+        setIsPrinciple(false);
+        }
+        else if(e.target.name === "Rate"){
+          setIsRate(false);
+          }
+          else{
+            setIsYear(false);
+            }
+      
+    }
+}
+
+const handleReset=()=>{
+  setPrinciple(0);
+  setYear(0);
+  setRate(0);
+  setInterest(0);
+  setIsPrinciple(true);
+  setIsRate(true);
+  setIsYear(true);
+}
 
   return (
     <>
@@ -24,17 +69,27 @@ function App() {
         </div>
           <form action="" className='mt-5'>
             <div className='mb-3'>
-            <TextField id="outlined-basic" label="Principle Amount" variant="outlined" className='w-100' />
+            <TextField id="outlined-basic" value={Principle || ""}  label="Principle Amount" variant="outlined" className='w-100' onChange={(e)=>validate(e)} name='Principle' />
+            {!isPrinciple &&
+             <p className='text-danger'>*Invalid Input</p>
+            }
+           
             </div>
             <div className='mb-3'>
-            <TextField id="outlined-basic" label="Rate of Interest" variant="outlined" className='w-100' />
+            <TextField id="outlined-basic" value={Rate || ""} label="Rate of Interest" variant="outlined" className='w-100' onChange={(e)=>validate(e)} name='Rate' />
+            {!IsRate &&
+            <p className='text-danger'>*Invalid Input</p>
+            }
             </div>
             <div className='mb-3'>
-            <TextField id="outlined-basic" label="Year" variant="outlined" className='w-100' />
+            <TextField id="outlined-basic" value={Year || ""}  label="Year" variant="outlined" className='w-100' onChange={(e)=>validate(e)} name='Year' />
+            {!IsYear &&
+            <p className='text-danger'>*Invalid Input</p>
+            }
             </div>
             <div className='d-flex justify-content-between mt-4'>
-            <Button variant="contained" className='' color='success' style={{width:'190px',height:'60px'}}>CALCULATE</Button>
-             <Button variant="outlined" className='' style={{width:'190px',height:'60px'}}>RESET</Button>
+            <Button variant="contained" className='' color='success' style={{width:'190px',height:'60px'} } disabled={isPrinciple && IsRate && IsYear ? false:true}>CALCULATE</Button>
+             <Button variant="outlined" className='' style={{width:'190px',height:'60px'}} onClick={handleReset}>RESET</Button>
             </div>
           </form>
           </div>
