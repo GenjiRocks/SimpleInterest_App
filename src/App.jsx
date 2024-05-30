@@ -55,6 +55,7 @@ const handleReset=()=>{
   setIsPrinciple(true);
   setIsRate(true);
   setIsYear(true);
+ 
 }
 
 const calculate=()=>{
