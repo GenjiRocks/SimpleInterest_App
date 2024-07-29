@@ -4,7 +4,7 @@
 You can view the live project [here](<https://simple-interest-app-omega.vercel.app/>).
 
 ## Introduction
-This is a React project built to calculation of Simple Interest.
+This is a React project built to calculate Simple Interest.
 
 ## Installation
 To install the project, follow these steps:
