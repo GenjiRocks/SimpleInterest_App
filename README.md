@@ -4,12 +4,7 @@
 You can view the live project [here](<https://simple-interest-app-omega.vercel.app/>).
 
 ## Introduction
-This is a React project built to demonstrate how to set up and run a React application. This project uses npm for package management.
-
-## Prerequisites
-Before you begin, ensure you have met the following requirements:
-- You have installed Node.js and npm.
-- You have a basic understanding of React.
+This is a React project built to calculation of Simple Interest.
 
 ## Installation
 To install the project, follow these steps:
@@ -17,7 +12,7 @@ To install the project, follow these steps:
 1. **Clone the repository:**
 
     ```sh
-    git clone <repository_url>
+    git clone https://github.com/GenjiRocks/SimpleInterest_App.git
     ```
 
 2. **Navigate to the project directory:**
