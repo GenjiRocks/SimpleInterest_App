@@ -1,7 +1,7 @@
 # React Project
 
 ## Live Link
-You can view the live project [here]([<live_project_url>](https://simple-interest-app-omega.vercel.app/)).
+You can view the live project [here](<https://simple-interest-app-omega.vercel.app/>).
 
 ## Introduction
 This is a React project built to demonstrate how to set up and run a React application. This project uses npm for package management.
