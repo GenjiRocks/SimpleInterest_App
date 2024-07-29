@@ -18,7 +18,8 @@ To install the project, follow these steps:
 2. **Navigate to the project directory:**
 
     ```sh
-    cd <project_directory>
+    cd SimpleInterest_App
+
     ```
 
 3. **Install the dependencies:**
